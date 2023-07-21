@@ -53,7 +53,7 @@ def train(context: ModelContext, **kwargs):
                 pmml_f_name=f"{context.artifact_output_path}/model.pmml")
 
     print("Saved trained model")
-    print(context)
+    print(context.dataset_info.feature_metadata)
 
 #     from xgboost import plot_importance
 #     model["xgb"].get_booster().feature_names = feature_names
