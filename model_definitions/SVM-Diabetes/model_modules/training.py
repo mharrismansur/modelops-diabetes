@@ -40,6 +40,7 @@ def train(context: ModelContext, **kwargs):
     model.fit(X_train, y_train)
 
     print("Finished training")
+    print(context.dataset_info.feature_metadata)
 
     # export model artefacts
     joblib.dump(model, f"{context.artifact_output_path}/model.joblib")
@@ -53,7 +54,7 @@ def train(context: ModelContext, **kwargs):
                 pmml_f_name=f"{context.artifact_output_path}/model.pmml")
 
     print("Saved trained model")
-    print(context.dataset_info.feature_metadata)
+
 
 #     from xgboost import plot_importance
 #     model["xgb"].get_booster().feature_names = feature_names
