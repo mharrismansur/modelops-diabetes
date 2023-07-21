@@ -40,7 +40,7 @@ def train(context: ModelContext, **kwargs):
     model.fit(X_train, y_train)
 
     print("Finished training")
-    print(context.dataset_info.feature_metadata)
+    # print(context.dataset_info.feature_metadata)
 
     # export model artefacts
     joblib.dump(model, f"{context.artifact_output_path}/model.joblib")
