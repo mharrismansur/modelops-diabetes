@@ -20,7 +20,7 @@ def train(context: ModelContext, **kwargs):
     feature_names = context.dataset_info.feature_names
     target_name = context.dataset_info.target_names[0]
 
-    print(context.dataset_info.sql)
+    # print(context.dataset_info.sql)
     
     # read training dataset from Teradata and convert to pandas
     train_df = DataFrame.from_query(context.dataset_info.sql)
@@ -53,6 +53,7 @@ def train(context: ModelContext, **kwargs):
                 pmml_f_name=f"{context.artifact_output_path}/model.pmml")
 
     print("Saved trained model")
+    print(context)
 
 #     from xgboost import plot_importance
 #     model["xgb"].get_booster().feature_names = feature_names
